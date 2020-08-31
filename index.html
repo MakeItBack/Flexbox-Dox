@@ -47,8 +47,8 @@ section {
         }
 
 </code>
-			<p>This causes the <code class="inline-code">&lt;section&gt;</code> element to become a flex container, and its children to become flex items.</p>
-			<p>To be clear, let's reiterate what is happening here. The element we've given a <code class="inline-code">display</code> value of <code class="inline-code">flex</code> to is acting like a block-level element in terms of how it interacts with the rest of the page, but its children are being laid out as flex items — the next section will explain in more detail what this means. Note also that you can use a <code class="inline-code">display</code> value of <code class="inline-code">inline-flex</code> if you wish to lay out an element's children as flex items, but have that element behave like an inline element.</p>
+			<p>This causes the <code class="inline-code">&lt;section&gt;</code> element to become a <strong>flex container</strong>, and its children to become <strong>flex items</strong>.</p>
+			<p>To be clear, let's reiterate what is happening here. The element we've given a <code class="inline-code">display</code> value of <code class="inline-code">flex</code> to is acting like a block-level element in terms of how it interacts with the rest of the page, but its children are being laid out as flex items. The next section will explain in more detail what this means. Note also that you can use a <code class="inline-code">display</code> value of <code class="inline-code">inline-flex</code> if you wish to lay out an element's children as flex items, but have that element behave like an inline element.</p>
 		</section><hr>
 
 		<section id="The_flex_model" class="main-section">
@@ -58,8 +58,8 @@ section {
 				<ul>
 					<li>The <strong>main axis</strong> is the axis running in the direction the flex items are being laid out in (e.g. as rows across the page, or columns down the page.) The start and end of this axis are called the <strong>main start</strong> and <strong>main end.</strong></li>
 					<li>The <strong>cross axis</strong> is the axis running perpendicular to the direction the flex items are being laid out in. The start and end of this axis are called the <strong>cross start</strong> and <strong>cross end.</strong></li>
-					<li>The parent element that has <code class="inline-code">display: flex</code> set on it (the <code class="inline-code">&lt;section&gt;</code> in our example) is called the flex container.</li>
-					<li>The items being laid out as flexible boxes inside the flex container are called flex items (the <code class="inline-code">&lt;article&gt;</code> elements in our example).</li>
+					<li>The parent element that has <code class="inline-code">display: flex</code> set on it (the <code class="inline-code">&lt;section&gt;</code> in our example) is called the <strong>flex container</strong>.</li>
+					<li>The items being laid out as flexible boxes inside the flex container are called <strong>flex items</strong> (the <code class="inline-code">&lt;article&gt;</code> elements in our example).</li>
 				</ul>
 			<p>Bear this terminology in mind as you go through subsequent sections. You can always refer back to it if you get confused about any of the terms being used.</p>		
 		</section><hr>
@@ -87,8 +87,8 @@ flex-wrap: wrap;
 flex: 200px;
 
 </code>
-			<p>We now have multiple rows — as many flexbox children are fitted onto each row as makes sense, and any overflow is moved down to the next line. The flex: 200px declaration set on the articles means that each will be at least 200px wide; we'll discuss this property in more detail later on. You might also notice that the last few children on the last row are each made wider so that the entire row is still filled.</p>
-			<p>But there's more we can do here. First of all, try changing your flex-direction property value to row-reverse — now you'll see that you still have your multiple row layout, but it starts from the opposite corner of the browser window and flows in reverse.</p>
+			<p>We now have multiple rows — as many flexbox children are fitted onto each row as makes sense, and any overflow is moved down to the next line. The <code class="inline-code">flex: 200px</code> declaration set on the articles means that each will be at least 200px wide; we'll discuss this property in more detail later on. You might also notice that the last few children on the last row are each made wider so that the entire row is still filled.</p>
+			<p>But there's more we can do here. First of all, try changing your  <code class="inline-code">flex-direction</code> property value to <code class="inline-code">row-reverse</code> — now you'll see that you still have your multiple row layout, but it starts from the opposite corner of the browser window and flows in reverse.</p>
 			<p>At this point it is worth noting that a shorthand exists for <code class="inline-code">flex-direction</code> and <code class="inline-code">flex-wrap</code> — <code class="inline-code">flex-flow</code>. So for example, you can replace</p>
 <code class="block-code">			
 flex-direction: row;
@@ -152,7 +152,7 @@ article:nth-of-type(3) {
 			<p><code class="inline-code">align-items</code> controls where the flex items sit on the cross axis.</p>
 			<ul>
 				<li>By default, the value is <code class="inline-code">stretch</code>, which stretches all flex items to fill the parent in the direction of the cross axis. If the parent hasn't got a fixed width in the cross axis direction, then all flex items will become as long as the longest flex items. This is how our first example got equal height columns by default.</li>
-				<li>The <code class="inline-code">center</code> value that we used in our above code causes the items to maintain their intrinsic dimensions, but be centered along the cross axis. This is why our current example's buttons are centered vertically.</li>
+				<li>The <code class="inline-code">center</code> value causes the items to maintain their intrinsic dimensions, but be centered along the cross axis.</li>
 				<li>You can also have values like <code class="inline-code">flex-start</code> and <code class="inline-code">flex-end</code>, which will align all items at the start and end of the cross axis respectively.</li>
 			</ul>
 			<p>You can override the <code class="inline-code">align-items</code> behavior for individual flex items by applying the <code class="inline-code">align-self</code> property to them.</p>
@@ -160,9 +160,9 @@ article:nth-of-type(3) {
 			<ul>
 				<li>The default value is <code class="inline-code">flex-start</code>, which makes all the items sit at the start of the main axis.</li>
 				<li>You can use <code class="inline-code">flex-end</code> to make them sit at the end.</li>
-				<li><code class="inline-code">center</code> is also a value for justify-content, and will make the flex items sit in the center of the main axis.</li>
+				<li><code class="inline-code">center</code> is also a value for <code class="inline-code">justify-content</code>, and will make the flex items sit in the center of the main axis.</li>
 				<li><code class="inline-code">space-around</code> is useful — it distributes all the items evenly along the main axis, with a bit of space left at either end.</li>
-				<li>There is another value, <code class="inline-code">space-between</code>, which is very similar to space-around except that it doesn't leave any space at either end.</li>
+				<li>There is another value, <code class="inline-code">space-between</code>, which is very similar to <code class="inline-code">space-around</code> except that it doesn't leave any space at either end.</li>
 			</ul>
 		</section><hr>
 
