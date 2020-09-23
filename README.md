@@ -9,3 +9,6 @@ Demonstrates typical features of tech docs like styling of code fragments and a 
 [Deployed](https://flexboxdox.netlify.app/) with Netlify
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5f6daad7-bb4e-478d-90f7-cb61060ea6ad/deploy-status)](https://app.netlify.com/sites/flexboxdox/deploys)
+
+### License
+This project is licensed under the terms of the BSD 3-clause "New" or "Revised" license.<br>
